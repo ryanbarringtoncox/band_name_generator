@@ -1,12 +1,18 @@
 # Band Name Generator
 
-Put words you like in a comma, separate text file like this.
+Put words you like in a comma, separate text file named 'words_file.txt' like this.
 
 ```
 rolling
 stone, stones
 flaming
 lip, lips
+```
+
+Run like this.
+
+```
+./band_name_generator.py
 ```
 
 Words on the same line shouldn't be combo'd (bug: fix this if it matters).  The output of above example is this.
