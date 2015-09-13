@@ -1,6 +1,6 @@
 # Band Name Generator
 
-Put words you like in a comma, separate text file named 'words_file.txt' like this.
+Put words you like in a comma-separated text file named 'words_file.txt' like this.
 
 ```
 rolling
