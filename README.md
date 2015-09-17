@@ -18,13 +18,14 @@ Run like this.
 Words on the same line shouldn't be combo'd. The output of above example is this.
 
 ```
+That's 26 band names from 6 words.
+
 rolling stone
 rolling stones
 rolling flaming
 rolling lip
 rolling lips
-stone stone
-stone stones
+stone rolling
 stone flaming
 stone lip
 stone lips
@@ -32,18 +33,17 @@ stones rolling
 stones flaming
 stones lip
 stones lips
+flaming rolling
 flaming stone
 flaming stones
-flaming flaming
 flaming lip
 flaming lips
+lip rolling
 lip stone
 lip stones
 lip flaming
-lip lip
-lip lips
 lips rolling
+lips stone
+lips stones
 lips flaming
-lips lip
-lips lips
 ```
