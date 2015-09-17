@@ -1,6 +1,6 @@
 # Band Name Generator
 
-Put words you like in a comma-separated text file named 'words_file.txt' like this.
+Put words in a comma-separated text file named like this.
 
 ```
 rolling
@@ -9,13 +9,15 @@ flaming
 lip, lips
 ```
 
+Words on same line won't be combo'd.
+
 Run like this.
 
 ```
-./band_name_generator.py words_file.txt
+./band_name_generator.py example_words_file.txt
 ```
 
-Words on the same line shouldn't be combo'd. The output of above example is this.
+The output of above example is this.
 
 ```
 That's 26 band names from 6 words.
