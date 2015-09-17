@@ -1,14 +1,7 @@
 #!/usr/bin/python
-
-'''
-TODOs: Add random feature with optional number i.e. -r 5 means give me five random band names
-'''   
-
 import sys, fileinput
 
 band_names = []
-#words_file = 'my_words_file.txt'
-#words_file = 'ems_words.txt'
 
 if __name__ == '__main__':
 
@@ -16,14 +9,16 @@ if __name__ == '__main__':
     print "Need an input file of words please."
     print "  ..exiting."
     sys.exit()
-  
+
   # create a list of lists
   line_list = []
 
   # loop through input file
   for line in fileinput.input():
     line = line.strip('\n').replace(" ","")
-    line_list.append(line.split(','))
+    # ignore lines with '#'
+    if '#' not in line: 
+      line_list.append(line.split(','))
 
   #print line_list
 
@@ -48,4 +43,3 @@ if __name__ == '__main__':
     print band_name
 
   print ""
-
