@@ -12,10 +12,10 @@ lip, lips
 Run like this.
 
 ```
-./band_name_generator.py
+./band_name_generator.py words_file.txt
 ```
 
-Words on the same line shouldn't be combo'd (bug: fix this if it matters).  The output of above example is this.
+Words on the same line shouldn't be combo'd. The output of above example is this.
 
 ```
 rolling stone

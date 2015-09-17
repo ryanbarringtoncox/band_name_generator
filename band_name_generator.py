@@ -1,39 +1,51 @@
 #!/usr/bin/python
 
+'''
+TODOs: Add random feature with optional number i.e. -r 5 means give me five random band names
+'''   
+
+import sys, fileinput
+
 band_names = []
-words_file = 'words_file.txt'
+#words_file = 'my_words_file.txt'
+#words_file = 'ems_words.txt'
 
-# get file line by line
-with open(words_file) as f:
-  content = f.readlines()
+if __name__ == '__main__':
 
-# strip line breaks
-content = [line.rstrip('\n') for line in content]
+  if  len(sys.argv) == 1:
+    print "Need an input file of words please."
+    print "  ..exiting."
+    sys.exit()
+  
+  # create a list of lists
+  line_list = []
 
-# create a list of lists
-line_list = []
-for line in content:
-  line = line.replace(" ","")
-  line_list.append(line.split(','))
+  # loop through input file
+  for line in fileinput.input():
+    line = line.strip('\n').replace(" ","")
+    line_list.append(line.split(','))
 
-# pair each list element with each element from every other list
-word_counter = 0
-for parent_key, words in enumerate(line_list):
-  for sub_key, word in enumerate(words):
-    # now we have each word
-    word_counter = word_counter + 1
-    for new_parent_key, new_words in enumerate(line_list):
-      for new_sub_key, new_word in enumerate(new_words):
-        # don't append words from same line
-        if sub_key != new_parent_key:
-          band_names.append(word + ' ' + new_word)
+  #print line_list
 
-print ""
-print "That's " + str(len(band_names)) + " band names from " + str(word_counter) + " words."
-print ""
+  # pair each list element with each element from every other list
+  word_counter = 0
+  for parent_key, words in enumerate(line_list):
+    for sub_key, word in enumerate(words):
+      # now we have each word
+      word_counter = word_counter + 1
+      for new_parent_key, new_words in enumerate(line_list):
+        for new_sub_key, new_word in enumerate(new_words):
+          # don't append words from same line
+          if parent_key != new_parent_key:
+            #print " " + new_word
+            band_names.append(word + ' ' + new_word)
 
-for band_name in band_names:
-  print band_name
+  print ""
+  print "That's " + str(len(band_names)) + " band names from " + str(word_counter) + " words."
+  print ""
 
-print ""
+  for band_name in band_names:
+    print band_name
+
+  print ""
 
